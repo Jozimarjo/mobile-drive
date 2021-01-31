@@ -34,7 +34,7 @@ export default function Rotograma() {
                     latitude: -3.0850058,
                     longitude: -60.0077936,
                     latitudeDelta: 0.1,
-                    longitudeDelta: 0.02,
+                    longitudeDelta: 0.1,
                 }}
                 showsUserLocation={true}
             >
@@ -54,18 +54,18 @@ export default function Rotograma() {
                 </Marker>
 
                 <Marker
-                    showCallou title="Posto Guaiara - Pernoite" description="Parada 2 as 21h saida as 07h"
+                    showCallou title="Posto Atem - Saida" description="saida as 07h"
                     coordinate={{
-                        latitude: -3.0850058,
-                        longitude: -60.0077936,
+                        latitude: -3.0389552,
+                        longitude: -59.9868914,
                     }}>
                 </Marker>
 
                 <Marker
-                    showCallou title="Posto Guaiara - Pernoite" description="Parada 2 as 21h saida as 07h"
+                    showCallou title="Blitz Conveniência - Destino" description="Nilo Penha as 09h a.m"
                     coordinate={{
-                        latitude: -3.0850058,
-                        longitude: -60.0077936,
+                        latitude: -3.0619159,
+                        longitude: -59.9759095,
                     }}>
                 </Marker>
             </MapView>
@@ -83,7 +83,7 @@ export default function Rotograma() {
 
                     {
                         openVoice ?
-                            <IconFone onPress={collapsed} name="angle-down" color="rgba(0, 0, 0, 0.3)" size={25}/>
+                            <IconFone style={{marginBottom: 5}} onPress={collapsed} name="angle-down" color="rgba(0, 0, 0, 0.3)" size={25}/>
                             : <IconFone onPress={expanded} name="angle-up" color="rgba(0, 0, 0, 0.3)" size={25}/>
 
                     }
