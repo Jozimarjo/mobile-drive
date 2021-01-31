@@ -8,10 +8,7 @@ import {Animated, StyleSheet, Text, View} from 'react-native';
 
 export default function Home() {
 
-    const [offset] = useState(new Animated.ValueXY({x: 0, y: 80}));
-    const [opacity] = useState(new Animated.Value(0));
     const navigation = useNavigation();
-
     return (
         <View style={styles.container}>
             <View styles={{
@@ -20,14 +17,15 @@ export default function Home() {
                 flex: 1,
             }}>
                 <RectButton onPress={() => navigation.navigate('Rotograma')}
-                    style={styles.containerButtons}>
+                            style={styles.containerButtons}>
                     <Icon style={styles.icon} color="#375BF4" backgroundColor="#FFFFFF" name='truck' size={20}/>
                     <Text style={styles.textButton}> Rotograma </Text>
                 </RectButton>
 
                 <RectButton onPress={() => navigation.navigate('Rotograma')}
                             style={styles.containerButtons}>
-                    <Icon style={styles.icon} color="#375BF4" backgroundColor="#FFFFFF" name='map-marked-alt' size={20}/>
+                    <Icon style={styles.icon} color="#375BF4" backgroundColor="#FFFFFF" name='map-marked-alt'
+                          size={20}/>
                     <Text style={styles.textButton}> Vamos lá? </Text>
                 </RectButton>
 

@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Animated, StyleSheet, TextInput, View} from 'react-native';
+import IconFont from 'react-native-vector-icons/Feather';
 
 export default function Voice() {
 
@@ -10,48 +11,19 @@ export default function Voice() {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
-            {/*<Button title="teste"/>*/}
-            {/*<TextInput style={styles.input} placeholder="email"*/}
-            {/*           autoCorrect={false}*/}
-            {/*           onChangeText={() => {*/}
-            {/*           }}/>*/}
-        </View>
+            <View style={styles.voiceIcon}>
+                <IconFont name="mic" color="#000" size={25}/>
+            </View>
     );
 }
 
 const styles = StyleSheet.create({
-    mapView: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-    },
-    container: {
-        flexDirection: 'row',
-        backgroundColor: '#e22b2b',
-        shadowColor: '#000',
-        shadowOpacity: 0.1,
-        borderWidth: 1,
-        borderColor: '#000',
-        borderRadius: 3,
-    },
-    labelMarketText: {
-        marginTop: 8,
-        marginRight: 8,
-        marginBottom: 8,
-        marginLeft: 8,
-        fontSize: 14,
-        color: '#333',
-    },
-    input:{
-        backgroundColor: '#FFF',
-        width: '90%',
-        marginBottom: 15,
-        color: '#222',
-        fontSize: 17,
-        borderRadius: 7,
-        padding: 10,
+    voiceIcon: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 48,
+        height: 48,
+        borderRadius: 100,
+        backgroundColor: 'rgba(55, 91, 244, 0.3)',
     }
 });

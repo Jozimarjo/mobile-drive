@@ -5,7 +5,8 @@ const CustomTextInput = (props) => {
     return(
         <View style={props.error ? style.viewError : style.view}>
             <Text style={style.text}>{props.title}</Text>
-            <TextInput {...props} style={style.input} placeholder={props.placeholder} />
+            <TextInput {...props} style={style.input} placeholder={props.placeholder}
+                       keyboardType={props.type}/>
         </View>
     );
 }
