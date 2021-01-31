@@ -1,8 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MapView, {Marker} from 'react-native-maps';
-import {StyleSheet, View, Button} from 'react-native';
+import {Animated, StyleSheet, View} from 'react-native';
+import Voice from '../voice';
+import IconFone from 'react-native-vector-icons/FontAwesome5';
 
 export default function Rotograma() {
+    const [openVoice, setOpenVoice] = useState(true);
+    const [heightContainer, setHeightContainer] = useState(97);
+
+
+    const expanded = () => {
+        setOpenVoice(true);
+        setHeightContainer(97);
+    };
+    const collapsed = () => {
+        setOpenVoice(false);
+        setHeightContainer(25);
+    };
 
     return (
         <View style={{flex: 1}}>
@@ -30,6 +44,22 @@ export default function Rotograma() {
                         longitude: -60.0077936,
                     }}>
                 </Marker>
+
+                <Marker
+                    showCallou title="Posto Guaiara - Pernoite" description="Parada 2 as 21h saida as 07h"
+                    coordinate={{
+                        latitude: -3.0850058,
+                        longitude: -60.0077936,
+                    }}>
+                </Marker>
+
+                <Marker
+                    showCallou title="Posto Guaiara - Pernoite" description="Parada 2 as 21h saida as 07h"
+                    coordinate={{
+                        latitude: -3.0850058,
+                        longitude: -60.0077936,
+                    }}>
+                </Marker>
             </MapView>
             <View
                 style={{
@@ -40,17 +70,29 @@ export default function Rotograma() {
                     flexDirection: 'row',
                     flex: 1,
                 }}>
-                <View style={{width: '100%', height: 150, backgroundColor: 'powderblue'}}>
+                <Animated.View style={[styles.containerVoice,
+                    {
+                        height: heightContainer,
+                    },
+                ]}>
+                    {
+                        openVoice ?
+                            <IconFone onPress={collapsed} name="angle-down" color="rgba(0, 0, 0, 0.3)" size={25}/>
+                            : <IconFone onPress={expanded} name="angle-up" color="rgba(0, 0, 0, 0.3)" size={25}/>
 
-                </View>
+                    }
 
-                {/*<Voice/>*/}
+                    {openVoice ? <Voice/> : false}
+
+
+                </Animated.View>
+
             </View>
         </View>
 
     );
 
-}
+};
 
 const styles = StyleSheet.create({
     mapView: {
@@ -59,6 +101,12 @@ const styles = StyleSheet.create({
         left: 0,
         bottom: 0,
         right: 0,
+    },
+    containerVoice: {
+        alignItems: 'center',
+        width: '100%',
+        backgroundColor: '#FFF',
+        opacity: 0.8,
     },
     container: {
         flexDirection: 'row',
