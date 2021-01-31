@@ -3,9 +3,9 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 const CustomTextInput = (props) => {
     return(
-        <View style={style.view}>
+        <View style={props.error ? style.viewError : style.view}>
             <Text style={style.text}>{props.title}</Text>
-            <TextInput style={style.input} placeholder={'000000000000'} />
+            <TextInput {...props} style={style.input} placeholder={props.placeholder} />
         </View>
     );
 }
@@ -15,7 +15,15 @@ const style = StyleSheet.create({
         backgroundColor: '#fff',
         borderBottomColor: '#001B2E',
         borderBottomWidth: 1,
-        width: '100%'
+        width: '100%',
+        marginTop: 20
+    },
+    viewError: {
+        backgroundColor: '#fff',
+        borderBottomColor: '#FFCC00',
+        borderBottomWidth: 1,
+        width: '100%',
+        marginTop: 20
     },
     text: {
         width: '100%',
