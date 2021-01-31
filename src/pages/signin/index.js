@@ -63,7 +63,7 @@ export default function SignIn() {
                                }}/>
 
                     <TouchableOpacity onPress={() => {
-                        navigation.navigate('SignUp');
+                        navigation.navigate('Home');
                     }} style={styles.btnSubmit}>
                         <Text style={styles.submitText}>Acessar</Text>
                     </TouchableOpacity>
